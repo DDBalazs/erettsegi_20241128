@@ -1,0 +1,11 @@
+Nagy Béla;1;3;4;5;4
+Kiss Elek;4;4;4;5;4
+Közepes Ilona;5;5;5;5;5
+Méla Béla;3;3;4;5;4
+Lakatos Kevin;3;3;3;5;4
+Kalányos Pamela;1;2;1;2;1
+Zord Veronika;2;3;4;3;4
+Víz Elek;2;3;4;2;2
+Nagy Árpád;4;5;3;3;2
+Cserép Virág;4;5;3;4;5
+Valaki;1;2;3;4;5
