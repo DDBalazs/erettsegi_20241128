@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +34,11 @@ namespace erettsegi_20241128
             tori = int.Parse(db[3]);
             nyelv = int.Parse(db[4]);
             info = int.Parse(db[5]);
-        }
-    }
-    public double AtlagSzamitas()
-    {
 
+        }
+        public double AtlagSzamitas()
+        {
+            return (matek + magyar + tori + nyelv + info) / 5;
+        }
     }
 }

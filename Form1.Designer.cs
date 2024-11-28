@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtvtablazat = new System.Windows.Forms.DataGridView();
             this.nev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.magyar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idegennyelv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.infoismeretek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbinfoatlag = new System.Windows.Forms.Label();
+            this.lblegjobb = new System.Windows.Forms.Label();
             this.chbujeredmeny = new System.Windows.Forms.CheckBox();
             this.lbnev = new System.Windows.Forms.Label();
             this.lbmagyar = new System.Windows.Forms.Label();
@@ -50,22 +50,22 @@
             this.cbmagyar = new System.Windows.Forms.ComboBox();
             this.txnev = new System.Windows.Forms.TextBox();
             this.btsave = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvtablazat)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtvtablazat
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtvtablazat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvtablazat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nev,
             this.magyar,
             this.matek,
             this.idegennyelv,
             this.infoismeretek});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(568, 313);
-            this.dataGridView1.TabIndex = 0;
+            this.dtvtablazat.Location = new System.Drawing.Point(13, 13);
+            this.dtvtablazat.Name = "dtvtablazat";
+            this.dtvtablazat.Size = new System.Drawing.Size(568, 313);
+            this.dtvtablazat.TabIndex = 0;
             // 
             // nev
             // 
@@ -97,23 +97,23 @@
             this.infoismeretek.Name = "infoismeretek";
             this.infoismeretek.ReadOnly = true;
             // 
-            // label1
+            // lbinfoatlag
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 412);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Informatika ismeretek átlaga: ";
+            this.lbinfoatlag.AutoSize = true;
+            this.lbinfoatlag.Location = new System.Drawing.Point(10, 412);
+            this.lbinfoatlag.Name = "lbinfoatlag";
+            this.lbinfoatlag.Size = new System.Drawing.Size(175, 13);
+            this.lbinfoatlag.TabIndex = 1;
+            this.lbinfoatlag.Text = "Informatika ismeretek átlaga: ";
             // 
-            // label2
+            // lblegjobb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 375);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Legjobb átlagú tanuló: ";
+            this.lblegjobb.AutoSize = true;
+            this.lblegjobb.Location = new System.Drawing.Point(10, 375);
+            this.lblegjobb.Name = "lblegjobb";
+            this.lblegjobb.Size = new System.Drawing.Size(138, 13);
+            this.lblegjobb.TabIndex = 2;
+            this.lblegjobb.Text = "Legjobb átlagú tanuló: ";
             // 
             // chbujeredmeny
             // 
@@ -303,15 +303,16 @@
             this.Controls.Add(this.lbmagyar);
             this.Controls.Add(this.lbnev);
             this.Controls.Add(this.chbujeredmeny);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblegjobb);
+            this.Controls.Add(this.lbinfoatlag);
+            this.Controls.Add(this.dtvtablazat);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Érettségi eredmények";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtvtablazat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,14 +320,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtvtablazat;
         private System.Windows.Forms.DataGridViewTextBoxColumn nev;
         private System.Windows.Forms.DataGridViewTextBoxColumn magyar;
         private System.Windows.Forms.DataGridViewTextBoxColumn matek;
         private System.Windows.Forms.DataGridViewTextBoxColumn idegennyelv;
         private System.Windows.Forms.DataGridViewTextBoxColumn infoismeretek;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbinfoatlag;
+        private System.Windows.Forms.Label lblegjobb;
         private System.Windows.Forms.CheckBox chbujeredmeny;
         private System.Windows.Forms.Label lbnev;
         private System.Windows.Forms.Label lbmagyar;
