@@ -38,10 +38,10 @@ namespace erettsegi_20241128
                 {
                     lista[max] = lista[i];
                 }
-                infoatlag = infoatlag + lista[i].Info/lista.Count;
+                infoatlag = infoatlag + lista[i].Info; 
             }
             lblegjobb.Text = "Legjobb átlagú tanuló: " + lista[max].Nev;
-            lbinfoatlag.Text = "Informatika ismeretek átlaga: " + Math.Round(infoatlag,2);
+            lbinfoatlag.Text = "Informatika ismeretek átlaga: " + Math.Round(infoatlag/lista.Count,1);
         }
         public Form1()
         {
@@ -64,6 +64,7 @@ namespace erettsegi_20241128
                 cbtori.Visible = true;
                 cbidegennyelv.Visible = true;
                 cbinfo.Visible = true;
+                btsave.Visible = true;
             }
             else
             {
@@ -85,6 +86,67 @@ namespace erettsegi_20241128
         private void Form1_Load(object sender, EventArgs e)
         {
             betoltes();
+        }
+
+        private void btsave_Click(object sender, EventArgs e)
+        {
+            if(txnev.Text.Length == 0)
+            {
+                MessageBox.Show("Nem adtad meg a nevet!", "BAJ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txnev.Focus();
+            }
+            else if(cbmagyar.SelectedItem == null)
+            {
+                MessageBox.Show("Nem választottad ki a magyar jegyeket!", "BAJ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cbmatek.SelectedItem == null)
+            {
+                MessageBox.Show("Nem választottad ki a matek jegyeket!", "BAJ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cbtori.SelectedItem == null)
+            {
+                MessageBox.Show("Nem választottad ki a töri jegyeket!", "BAJ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cbidegennyelv.SelectedItem == null)
+            {
+                MessageBox.Show("Nem választottad ki a idegennyelv jegyeket!", "BAJ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cbinfo.SelectedItem == null)
+            {
+                MessageBox.Show("Nem választottad ki a info jegyeket!", "BAJ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                FileStream fs = new FileStream("..\\..\\src\\erettsegi.txt", FileMode.Append);
+                StreamWriter sw = new StreamWriter(fs);
+
+                sw.Write("\n" + txnev.Text + ";" + cbmagyar.SelectedItem.ToString() + ";" + cbmatek.SelectedItem.ToString() + ";" + cbtori.SelectedItem.ToString() + ";" + cbidegennyelv.SelectedItem.ToString() + ";" + cbinfo.SelectedItem.ToString());
+
+                sw.Close();
+                fs.Close();
+
+                betoltes();
+
+                txnev.Clear();
+                cbmagyar.SelectedItem = null;
+                cbidegennyelv.SelectedItem = null;
+                cbmatek.SelectedItem = null;
+                cbinfo.SelectedItem = null;
+                cbtori.SelectedItem = null;
+            }
+        }
+
+        private void txnev_TextChanged(object sender, EventArgs e)
+        {
+            if (txnev.Text.Length > 0)
+            {
+                if(int.TryParse(txnev.Text, out _))
+                {
+                        MessageBox.Show("Ne számot adjál meg more!", "HIBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txnev.Clear();
+                        txnev.Focus();
+                }
+            }
         }
     }
 }

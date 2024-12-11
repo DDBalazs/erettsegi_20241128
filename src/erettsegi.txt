@@ -9,3 +9,4 @@ Víz Elek;2;3;4;2;2
 Nagy Árpád;4;5;3;3;2
 Cserép Virág;4;5;3;4;5
 Valaki;1;2;3;4;5
+Csőke Balázs Zsolt;1;1;1;1;1

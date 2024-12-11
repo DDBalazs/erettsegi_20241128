@@ -273,6 +273,7 @@
             this.txnev.Size = new System.Drawing.Size(217, 20);
             this.txnev.TabIndex = 15;
             this.txnev.Visible = false;
+            this.txnev.TextChanged += new System.EventHandler(this.txnev_TextChanged);
             // 
             // btsave
             // 
@@ -283,6 +284,7 @@
             this.btsave.Text = "Adatok mentése";
             this.btsave.UseVisualStyleBackColor = true;
             this.btsave.Visible = false;
+            this.btsave.Click += new System.EventHandler(this.btsave_Click);
             // 
             // Form1
             // 
